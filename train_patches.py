@@ -54,6 +54,7 @@ if __name__ == '__main__':
                     if y1 > j2 or y2 < j:
                         continue
 
+                    # dot coordinates inside patch
                     px1 = (x1 - i)
                     px2 = (x2 - i)
                     py1 = (y1 - j)
@@ -64,3 +65,5 @@ if __name__ == '__main__':
                 if len(rows) > 0:
                     cv2.imwrite(img_out, img[j:j2, i:i2, :])                    
                     # write labels as well
+                    # patch_df = pd.DataFrame(rows, columns=['klass_id', 'px1', 'py1', 'px2', 'py2'])
+                    # patch_df.to_csv("{}.csv".format(img_out), index=False)
